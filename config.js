@@ -8,7 +8,7 @@ var config = {
   // subtitle: "NYC restaurants during the pandemic",
   // byline: "Sherry Manzar",
   footer:
-    "Source: ACS 2014-2019, NYC Open Data. Eater/Curbed, NYC DoH, Street View photos are from Google Maps while current photographs are mine ",
+    "Sources: ACS 2014-2019, NYC Open Data. Eater/Curbed, NYC DoH, Treasury Dept - SBA, Street View photos are from Google Maps while current photographs are mine ",
   chapters: [
     {
       id: "hero",

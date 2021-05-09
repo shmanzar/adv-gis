@@ -29,17 +29,27 @@ map.on("idle", function () {
     // Set up the corresponding toggle button for each layer.
     for (var i = 0; i < toggleableLayerIds.length; i++) {
       var id = toggleableLayerIds[i];
+      var layer_names = [
+        "% residents who are restaurant workers",
+        "% residents of immigrants and restaurant workers",
+        "% businesses which restaurants",
+        "% residents of immigrants and restaurant workers",
+        "Case rate of COVID19 (per 100,000)",
+        "Total amount PPP loans ($)",
+      ];
+
       if (!document.getElementById(id)) {
         // Create a link.
         var link = document.createElement("a");
         link.id = id;
         link.href = "#";
-        link.textContent = id;
+        link.textContent = layer_names[i];
         link.className = "";
         console.log(link);
         // Show or hide layer when the toggle is clicked.
         link.onclick = function (e) {
-          var clickedLayer = this.textContent;
+          var clickedLayer = this.id;
+          //   console.log(clickedLayer, this.textContent);
           e.preventDefault();
           e.stopPropagation();
 
@@ -105,3 +115,16 @@ btn.addEventListener("click", function () {
     map.setLayoutProperty("nyc-restaurant-workers", "visibility", "none");
   }
 });
+
+// Add the control to the map.
+var geocoder = new MapboxGeocoder({
+  accessToken:
+    "pk.eyJ1Ijoic21hbnphciIsImEiOiJja29kbWMza2wwM3RxMnJxZzgxZnJsc3hlIn0.ckerqg7rLRdGx7-A06UNzA",
+
+  mapboxgl: mapboxgl,
+  placeholder: "Search around your neighbourhood",
+  marker: false,
+  zoom: 12,
+});
+
+document.getElementById("geocoder").appendChild(geocoder.onAdd(map));
