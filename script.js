@@ -1,32 +1,4 @@
 function workersPop() {
-  //   puma: 4012
-  // ​​​
-  // puma_codes: 4012
-  // ​​​
-  // puma_codes_clean: 4012
-  // ​​​
-  // rb_numbers: 519
-  // ​​​
-  // rb_share_business: 11.3
-  // ​​​
-  // restaurants_workers: 7777
-  // ​​​
-  // shape_area: 112243392.925
-  // ​​​
-  // shape_leng: 97227.1664095
-  // ​​​
-  // share_of_workforce: 12.2
-  // ​​​
-  // sow_asian: 60.8
-  // ​​​
-  // sow_black: 0
-  // ​​​
-  // sow_hispanic: 29.2
-  // ​​​
-  // sow_immigrants: 84.9
-  // ​​​
-  // sow_white: 9.3
-
   var formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",

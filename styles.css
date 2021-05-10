@@ -187,13 +187,14 @@ h2 {
 #menu a.active {
   background-color: #3887be;
   color: #ffffff;
+  font-weight: 700;
 }
 
 #menu a.active:hover {
   background: #3074a4;
 }
 
-.test-btn {
+.closed-rest-btn {
   background: #fff;
   position: absolute;
   z-index: 1;
@@ -205,9 +206,10 @@ h2 {
   font-family: "Open Sans", sans-serif;
 }
 
-.test-btn a.active {
+.close-btn-active {
   background-color: #3887be;
   color: #ffffff;
+  font-weight: 700;
 }
 
 .geocoder {
@@ -220,4 +222,38 @@ h2 {
 }
 .mapboxgl-ctrl-geocoder {
   min-width: 100%;
+}
+
+.mapboxgl-popup-content h3 {
+  font-weight: 700;
+  font-size: 1.1em;
+  border-width: 0px 0px 0.5px 0px;
+  border-style: solid;
+  border-color: rgb(80, 80, 80);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.mapboxgl-popup-content p {
+  font-weight: 500;
+  margin-top: 0.3em;
+  margin-bottom: 0em;
+}
+
+.mapboxgl-popup-content p b {
+  font-weight: 300;
+  margin-top: 0.3em;
+  margin-bottom: 0em;
+}
+
+.mapboxgl-popup-content {
+  -webkit-filter: drop-shadow(0 2px 4px rgba(59, 59, 61, 0.4));
+  filter: drop-shadow(0 2px 4px rgba(59, 59, 61, 0.4));
+  /* background-color: rgba(126, 132, 138, 0.205); */
+  /* background-color: rgba(26, 28, 29, 0.95); */
+
+  /* color: rgba(255, 250, 240, 0.9); */
+  border: 1px solid hsla(0, 0%, 43.9%, 0.2);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }

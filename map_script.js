@@ -8,6 +8,7 @@ var map = new mapboxgl.Map({
     "pk.eyJ1Ijoic21hbnphciIsImEiOiJja29kbWMza2wwM3RxMnJxZzgxZnJsc3hlIn0.ckerqg7rLRdGx7-A06UNzA",
   container: "map",
   style: "mapbox://styles/smanzar/cknpkn8mj3em717p128ryzthw",
+
   center: [-74, 40.7],
   zoom: 10,
   maxBounds: map_bounds,
@@ -20,10 +21,10 @@ map.on("idle", function () {
     // Enumerate ids of the layers.
     var toggleableLayerIds = [
       "nyc-restaurant-workers",
-      "nyc-restaurant-immigrants-heavy",
-      "nyc-restaurant-business",
       "nyc-restaurant-immigrants",
-      "cases-rate-heavy",
+      "median-inc",
+      "nyc-restaurant-business",
+      "cases-rate",
       "loans-small",
     ];
     // Set up the corresponding toggle button for each layer.
@@ -32,8 +33,8 @@ map.on("idle", function () {
       var layer_names = [
         "% residents who are restaurant workers",
         "% residents of immigrants and restaurant workers",
+        "Median household income ($)",
         "% businesses which restaurants",
-        "% residents of immigrants and restaurant workers",
         "Case rate of COVID19 (per 100,000)",
         "Total amount PPP loans ($)",
       ];
@@ -83,7 +84,12 @@ function workersPop() {
   console.log("test");
   map.on("click", function (e) {
     var nyc_rest = map.queryRenderedFeatures(e.point, {
-      layers: ["nyc-restaurant-immigrants", "median-inc", "cases-rate"],
+      layers: [
+        "nyc-restaurant-immigrants",
+        "median-inc",
+        "cases-rate",
+        "loans-small",
+      ],
     });
     console.log(nyc_rest, e.lngLat);
     new mapboxgl.Popup()
@@ -92,27 +98,64 @@ function workersPop() {
         "<h3>" +
           nyc_rest[0].properties.neighbourhood +
           "</h3><p> <b> Restaurant worker residents (%):</b> " +
-          nyc_rest[2].properties.share_of_workforce +
+          nyc_rest[3].properties.share_of_workforce +
           "</p><p><b>Immigrant restaurant workers (%):</b> " +
-          nyc_rest[2].properties.sow_immigrants +
+          nyc_rest[3].properties.sow_immigrants +
           "</p><p><b>Median household income: </b> " +
-          formatter.format(nyc_rest[0].properties.median_income) +
+          formatter.format(nyc_rest[1].properties.median_income) +
           "</p><p><b>COVID19 cases per 100,000: </b> " +
-          nyc_rest[1].properties.case_rate
+          Math.round(nyc_rest[2].properties.case_rate) +
+          "</p><p><b>Cumulative loans disbursed ($150k or less / loan): </b> " +
+          formatter.format(nyc_rest[0].properties.loan_small_amounts)
       )
       .addTo(map);
   });
 }
 
-var btn = document.querySelector(".test-btn");
+var btn = document.querySelector(".closed-rest-btn");
 
 btn.addEventListener("click", function () {
-  var visibility = map.getLayoutProperty("closings-geo");
+  console.log(map.getLayer("closings-geo"));
+  var visibility = map.getPaintProperty("closings-geo", "circle-opacity");
   console.log(visibility);
-  if (visibility === "none") {
-    map.setLayoutProperty("nyc-restaurant-workers", "visibility", "visible");
+  if (visibility === 0) {
+    btn.classList.add("close-btn-active");
+
+    map.setPaintProperty("closings-geo", "circle-opacity", 1);
+    var popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+    });
+
+    map.on("mouseenter", "closings-geo", function (e) {
+      // Change the cursor style as a UI indicator.
+      map.getCanvas().style.cursor = "pointer";
+      let coordinates = e.features[0].geometry.coordinates.slice();
+      let description = e.features[0].properties.name;
+      let neighborhood = e.features[0].properties.neighborhood;
+
+      // console.log(e, coordinates, description, neighborhood);
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+      // Populate the popup and set its coordinates
+      // based on the feature found.
+      popup
+        .setLngLat(coordinates)
+        .setHTML("<h3>" + description + "</h3>" + neighborhood)
+        .addTo(map);
+    });
+    map.on("mouseleave", "closings-geo", function () {
+      map.getCanvas().style.cursor = "";
+      popup.remove();
+    });
   } else {
-    map.setLayoutProperty("nyc-restaurant-workers", "visibility", "none");
+    btn.classList.remove("close-btn-active");
+
+    map.setPaintProperty("closings-geo", "circle-opacity", 0);
   }
 });
 

@@ -105,10 +105,87 @@ var config = {
       ],
     },
     {
+      id: "intro-id",
+      // image: "/data/cases_pre.svg",
+      // title: "Residents who identify as working in the food service industry",
+      description: `The hospitality industry has always been a critical component of New York City’s economic and cultural significance, employing hundreds of thousands, attracting millions of visitors who spend around $46 billion annually, and contributing to its image as a cultural powerhouse.`,
+      location: {
+        center: [-73.962, 40.694],
+        zoom: 10.5,
+        pitch: 0,
+        bearing: 0,
+      },
+      mapAnimation: "easeTo",
+      onChapterEnter: [
+        {
+          layer: "nyc-restaurant-workers",
+          opacity: 0,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "nyc-restaurant-workers",
+          opacity: 0,
+        },
+      ],
+    },
+    {
+      id: "intro-2-id",
+      // image: "/data/cases_pre.svg",
+      // title: "Residents who identify as working in the food service industry",
+      description: `In March 2020, when the COVID-19 lockdown began, the industry suffered a dual burden of having lost the customer flow on which it depended on for survival but also now being termed as “essential”. Many businesses shut down, some permanently. Most significantly reduced service operations.
+      `,
+      location: {
+        center: [-73.962, 40.694],
+        zoom: 10.5,
+        pitch: 0,
+        bearing: 0,
+      },
+      mapAnimation: "easeTo",
+      onChapterEnter: [
+        {
+          layer: "nyc-restaurant-workers",
+          opacity: 0,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "nyc-restaurant-workers",
+          opacity: 0,
+        },
+      ],
+    },
+    {
+      id: "intro-3-id",
+      // image: "/data/cases_pre.svg",
+      // title: "Residents who identify as working in the food service industry",
+      description: `There is a need to understand and document the changes in the hospitality industry because they are fundamentally changing their own streets and neighbourhoods, and in doing so transforming the city as a whole.
+      `,
+      location: {
+        center: [-73.962, 40.694],
+        zoom: 10.5,
+        pitch: 0,
+        bearing: 0,
+      },
+      mapAnimation: "easeTo",
+      onChapterEnter: [
+        {
+          layer: "nyc-restaurant-workers",
+          opacity: 0,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "nyc-restaurant-workers",
+          opacity: 0,
+        },
+      ],
+    },
+    {
       id: "slug-style-id",
       // image: "/data/cases_pre.svg",
       // title: "Residents who identify as working in the food service industry",
-      description: `On average, <span style="font-weight: bold; color: #3669d6"
+      description: `Let's first look at the industry's labour: On average, <span style="font-weight: bold; color: #3669d6"
       >6%</span> of the city's workforce works in the restaurant industry`,
       location: {
         center: [-73.962, 40.694],
