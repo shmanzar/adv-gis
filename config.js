@@ -298,283 +298,285 @@ var config = {
         },
       ],
     },
-    {
-      id: "bqe",
-      // title: "Sunset Park",
-      //<img src="./images/photos/open-streets-sunset.png" width="200px" height="250px">
-      alignment: "left",
-      // image: "./images/photos/open-streets-sunset_before.png",
-      description: ` <span style='font-weight: bold; color: #3669d6'
-        >12%</span> of all Sunset Park's residents worked in the food service industry. Compare that to <span style='font-weight: bold; color: #83c6e3'
-        >3.5% </span>in neighbouring Park Slope
-        <p><audio
-        controls
-        src="./sounds/210319_2034.mp3">
-            Your browser does not support the
-            <code>audio</code> element.
-    </audio><iframe frameborder="0" class="juxtapose" width="100%" height="250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=dbe39720-aeec-11eb-b7bf-95443c729a29"></iframe>
-        </p> `,
-      location: {
-        center: [-74.00773, 40.64842],
-        zoom: 13,
-        pitch: 45.0,
-        bearing: 0.0,
-      },
-      mapAnimation: "easeTo",
-      callback: "workersPop",
+    // {
+    //   id: "bqe",
+    //   // title: "Sunset Park",
+    //   //<img src="./images/photos/open-streets-sunset.png" width="200px" height="250px">
+    //   alignment: "left",
+    //   // image: "./images/photos/open-streets-sunset_before.png",
+    //   description: ` <span style='font-weight: bold; color: #3669d6'
+    //     >12%</span> of all Sunset Park's residents worked in the food service industry. Compare that to <span style='font-weight: bold; color: #83c6e3'
+    //     >3.5% </span>in neighbouring Park Slope
+    //     <p><audio
+    //     controls
+    //     src="./sounds/210319_2034.mp3">
+    //         Your browser does not support the
+    //         <code>audio</code> element.
+    // </audio><iframe frameborder="0" class="juxtapose" width="100%" height="250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=dbe39720-aeec-11eb-b7bf-95443c729a29"></iframe>
+    //     </p> `,
+    //   location: {
+    //     center: [-74.00773, 40.64842],
+    //     zoom: 13,
+    //     pitch: 45.0,
+    //     bearing: 0.0,
+    //   },
+    //   mapAnimation: "easeTo",
+    //   callback: "workersPop",
 
-      onChapterEnter: [
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 1,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-      ],
-      onChapterExit: [
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-      ],
-    },
-    {
-      id: "sp-inc",
-      // title: "Sunset Park",
-      alignment: "left",
+    //   onChapterEnter: [
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 1,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //   ],
+    //   onChapterExit: [
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: "sp-inc",
+    //   // title: "Sunset Park",
+    //   alignment: "left",
 
-      // image: "./path/to/image/source.png",
-      description: `At the same time, most households have relatively modest household income - around <span style='font-weight: bold; color: #bdfa92'
-        >$55,000 </span> <p> <iframe frameborder="0" class="juxtapose" width="100%" height="250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=93785c7a-aef4-11eb-b7bf-95443c729a29"></iframe></p>`,
-      location: {
-        center: [-74.00773, 40.64842],
-        zoom: 13,
-        pitch: 45.0,
-        bearing: 0.0,
-      },
-      callback: "workersPop",
+    //   // image: "./path/to/image/source.png",
+    //   description: `At the same time, most households have relatively modest household income - around <span style='font-weight: bold; color: #bdfa92'
+    //     >$55,000 </span> <p> <iframe frameborder="0" class="juxtapose" width="100%" height="250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=93785c7a-aef4-11eb-b7bf-95443c729a29"></iframe></p>`,
+    //   location: {
+    //     center: [-74.00773, 40.64842],
+    //     zoom: 13,
+    //     pitch: 45.0,
+    //     bearing: 0.0,
+    //   },
+    //   callback: "workersPop",
 
-      onChapterEnter: [
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 0.01,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-        {
-          layer: "median-inc-light",
-          opacity: 1,
-        },
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-      ],
-      onChapterExit: [
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-        {
-          layer: "median-inc-light",
-          opacity: 0,
-        },
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-      ],
-    },
-    {
-      id: "uws",
-      // title: "Upper West Side",
-      alignment: "left",
+    //   onChapterEnter: [
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 0.01,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "median-inc-light",
+    //       opacity: 1,
+    //     },
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //   ],
+    //   onChapterExit: [
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "median-inc-light",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: "uws",
+    //   // title: "Upper West Side",
+    //   alignment: "left",
 
-      // image: "./path/to/image/source.png",
-      description: `While only around <span style='font-weight: bold; color: #83c6e3'
-        >1% </span> of those who lived in Upper West Side were restaurant workers`,
-      location: {
-        center: [-73.97954, 40.78272],
-        zoom: 13.82,
-        pitch: 45.0,
-        bearing: 0.0,
-      },
-      callback: "workersPop",
+    //   // image: "./path/to/image/source.png",
+    //   description: `While only around <span style='font-weight: bold; color: #83c6e3'
+    //     >1% </span> of those who lived in Upper West Side were restaurant workers`,
+    //   location: {
+    //     center: [-73.97954, 40.78272],
+    //     zoom: 13.82,
+    //     pitch: 45.0,
+    //     bearing: 0.0,
+    //   },
+    //   callback: "workersPop",
 
-      onChapterEnter: [
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 1,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-      ],
-      onChapterExit: [
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-      ],
-    },
-    {
-      id: "uws-inc",
-      // title: "Upper West Side",
-      alignment: "left",
+    //   onChapterEnter: [
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 1,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //   ],
+    //   onChapterExit: [
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: "uws-inc",
+    //   // title: "Upper West Side",
+    //   alignment: "left",
 
-      // image: "./path/to/image/source.png",
-      description: `It is also inhabitated by relatively richer households - its median household income is <span style='font-weight: bold; color: #5cbb18'
-      >$117,000 </span>`,
-      location: {
-        center: [-73.97954, 40.78272],
-        zoom: 13.82,
-        pitch: 45.0,
-        bearing: 0.0,
-      },
-      callback: "workersPop",
+    //   // image: "./path/to/image/source.png",
+    //   description: `It is also inhabitated by relatively richer households - its median household income is <span style='font-weight: bold; color: #5cbb18'
+    //   >$117,000 </span>`,
+    //   location: {
+    //     center: [-73.97954, 40.78272],
+    //     zoom: 13.82,
+    //     pitch: 45.0,
+    //     bearing: 0.0,
+    //   },
+    //   callback: "workersPop",
 
-      onChapterEnter: [
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-        {
-          layer: "median-inc-heavy",
-          opacity: 1,
-        },
-      ],
-      onChapterExit: [
-        {
-          layer: "nyc-restaurant-workers",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-immigrants",
-          opacity: 0,
-        },
-        {
-          layer: "nyc-restaurant-business",
-          opacity: 0,
-        },
-        {
-          layer: "median-inc-heavy",
-          opacity: 0,
-        },
-        {
-          layer: "cases-rate-heavy",
-          opacity: 0,
-        },
-      ],
-    },
+    //   onChapterEnter: [
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "median-inc-heavy",
+    //       opacity: 1,
+    //     },
+    //   ],
+    //   onChapterExit: [
+    //     {
+    //       layer: "nyc-restaurant-workers",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-immigrants",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "nyc-restaurant-business",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "median-inc-heavy",
+    //       opacity: 0,
+    //     },
+    //     {
+    //       layer: "cases-rate-heavy",
+    //       opacity: 0,
+    //     },
+    //   ],
+    // },
     {
       id: "jfk",
       // title: "Queens",
       alignment: "left",
 
       // image: "./path/to/image/source.png",
-      description: `Almost <span style='font-weight: bold; color: #3669d6'
-        >1 in 5</span> restaurant workers live in these neighbourhoods of Queens.`,
+      description: `<h3 class ="rest-work-col">% residents who are restaurant workers</h3>Almost <span style='font-weight: bold; color: #3669d6'
+        >1 in 5</span> restaurant workers live in these neighbourhoods of Queens. <p class= 'legend-text'><span style='font-weight: bold; color: #242fae'
+        >More</span> restuarant workers vs <span style='font-weight: bold; color:#a3eae4'
+        >less</span> restaurant workers</p>`,
       location: {
         center: [-73.846149, 40.748883],
         zoom: 12,
@@ -630,8 +632,10 @@ var config = {
       alignment: "left",
 
       // image: "./path/to/image/source.png",
-      description: `Of those workers, around <span style='font-weight: bold; color: #aa4202'
-      >85%</span> are immigrants`,
+      description: `<h3 class ="imig-work-col">% residents are immigrant restaurant workers</h3> Of those workers, around <span style='font-weight: bold; color: #aa4202'
+      >85%</span> are immigrants <p class= 'legend-text'><span style='font-weight: bold; color: #a54002'
+      >More</span> immigrant workers vs <span style='font-weight: bold; color: #f2e0d9'
+      >less</span> immigrant workers</p>`,
       location: {
         center: [-73.846149, 40.748883],
         zoom: 12,
@@ -686,11 +690,10 @@ var config = {
       alignment: "left",
 
       // image: "./path/to/image/source.png",
-      // description: `Of those workers, around <span style='font-weight: bold; color: #aa4202'
-      // >85%</span> are immigrants`,
+      description: ``,
       location: {
         center: [-73.846149, 40.748883],
-        zoom: 10,
+        zoom: 12,
         pitch: 0.0,
         bearing: 0.0,
       },
@@ -742,13 +745,13 @@ var config = {
       alignment: "left",
 
       // image: "./path/to/image/source.png",
-      description: `Not coincidentally, these are the same neighbourhoods with the highest rates of COVID-19 cases; with Jackson Heights having had <span style='font-weight: bold; color: #cd1919'
+      description: `<h3 class ="cases-col">COVID-19 cases per 100,000 residents</h3> Not coincidentally, these are the same neighbourhoods with the highest rates of COVID-19 cases; with Jackson Heights having had <span style='font-weight: bold; color: #cd1919'
       >11,800</span> per 100,000 cases <p class= 'legend-text'> <span style='font-weight: bold; color: #cd1919'
       >High</span> vs <span style='font-weight: bold; color: grey'
       >low</span> rates of cases </p>`,
       location: {
         center: [-73.846149, 40.748883],
-        zoom: 11,
+        zoom: 12,
         pitch: 0.0,
         bearing: 0.0,
       },
@@ -790,16 +793,76 @@ var config = {
         },
       ],
     },
+    {
+      id: "aid-jh",
+      // title: "Queens",
+      alignment: "left",
 
+      // image: "./path/to/image/source.png",
+      description: `<h3 class ="aid-col">Total PPP loans disbursed ($)</h3> Let's compare that to the amount of PPP loans disbursed to Jackson Heights - some of the lowest in the city <p class= 'legend-text'> <span style='font-weight: bold; color: #018901'
+      >High</span> loan disbursement vs <span style='font-weight: bold; color: #d9f8d9'
+      >low</span> loan disbursement | Feb 2021</p>`,
+      location: {
+        center: [-73.846149, 40.748883],
+        zoom: 12,
+        pitch: 0.0,
+        bearing: 0.0,
+      },
+      callback: "workersPop",
+      onChapterEnter: [
+        {
+          layer: "loans-small",
+          opacity: 1,
+        },
+        {
+          layer: "cases-rate-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-business",
+          opacity: 0,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "loans-small",
+          opacity: 0,
+        },
+        {
+          layer: "cases-rate-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-business",
+          opacity: 0,
+        },
+      ],
+    },
     {
       id: "aid-nyc",
       // title: "Queens",
       alignment: "left",
 
       // image: "./path/to/image/source.png",
-      description: `When the help came, the same inequities remained <p class= 'legend-text'> <span style='font-weight: bold; color: #018901'
+      description: `<h3 class ="aid-col">Total PPP loans disbursed ($)</h3> When the help came, the same inequities remained <p class= 'legend-text'> <span style='font-weight: bold; color: #018901'
       >High</span> loan disbursement vs <span style='font-weight: bold; color: #d9f8d9'
-      >low</span> loan disbursement</p>`,
+      >low</span> loan disbursement | Feb 2021</p>`,
       location: {
         center: [-73.99664, 40.67983],
         zoom: 10,
@@ -853,13 +916,135 @@ var config = {
       ],
     },
     {
+      id: "aid-nyc-2",
+      // title: "Queens",
+      alignment: "left",
+
+      // image: "./path/to/image/source.png",
+      description: `<h3 class ="aid-col">Total PPP loans disbursed ($)</h3> High immigrant populated neighbourhoods also often got lowest amounts in federal support <p class= 'legend-text'> <span style='font-weight: bold; color: #018901'
+      >High</span> loan disbursement vs <span style='font-weight: bold; color: #d9f8d9'
+      >low</span> loan disbursement |Feb 2021</p>`,
+      location: {
+        center: [-73.99664, 40.67983],
+        zoom: 10,
+        pitch: 0.0,
+        bearing: 0.0,
+      },
+      callback: "workersPop",
+      onChapterEnter: [
+        {
+          layer: "loans-small",
+          opacity: 1,
+        },
+        {
+          layer: "cases-rate-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-business",
+          opacity: 0,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "loans-small",
+          opacity: 0,
+        },
+        {
+          layer: "cases-rate-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants-heavy",
+          opacity: 1,
+        },
+        {
+          layer: "nyc-restaurant-immigrants",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-business",
+          opacity: 0,
+        },
+      ],
+    },
+    {
+      id: "aid-nyc-3",
+      // title: "Queens",
+      alignment: "left",
+
+      // image: "./path/to/image/source.png",
+      description: `<h3 class ="imig-work-col">% residents are immigrant restaurant workers</h3> High immigrant populated neighbourhoods also often got lowest amounts in federal support <p class= 'legend-text'><span style='font-weight: bold; color: #a54002'
+      >More</span> immigrant workers vs <span style='font-weight: bold; color: #f2e0d9'
+      >less</span> immigrant workers</p>`,
+      location: {
+        center: [-73.99664, 40.67983],
+        zoom: 10,
+        pitch: 0.0,
+        bearing: 0.0,
+      },
+      callback: "workersPop",
+      onChapterEnter: [
+        {
+          layer: "loans-small",
+          opacity: 0,
+        },
+        {
+          layer: "cases-rate-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants",
+          opacity: 1,
+        },
+        {
+          layer: "nyc-restaurant-business",
+          opacity: 0,
+        },
+      ],
+      onChapterExit: [
+        {
+          layer: "loans-small",
+          opacity: 0,
+        },
+        {
+          layer: "cases-rate-heavy",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-immigrants-heavy",
+          opacity: 1,
+        },
+        {
+          layer: "nyc-restaurant-immigrants",
+          opacity: 0,
+        },
+        {
+          layer: "nyc-restaurant-business",
+          opacity: 0,
+        },
+      ],
+    },
+    {
       id: "closings-overall",
       alignment: "left",
 
       // title: "Many longtime institutions shutdown during the pandemic",
       // image: "./path/to/image/source.png",
-      description:
-        "A 'scraping' activity mapped them from their 'obituaries' in the popular news media to this map",
+      description: "",
+      // "A 'scraping' activity mapped them from their 'obituaries' in the popular news media to this map",
       location: {
         center: [-73.98863, 40.69056],
         zoom: 10.66,
